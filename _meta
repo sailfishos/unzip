@@ -1,0 +1,15 @@
+<package project="Mer:Trunk:Base" name="unzip">
+  <title>A utility for unpacking zip files</title>
+  <description>The unzip utility is used to list, test, or extract files from a zip
+archive.  Zip archives are commonly found on MS-DOS systems.  The zip
+utility, included in the zip package, creates zip archives.  Zip and
+unzip are both compatible with archives created by PKWARE(R)'s PKZIP
+for MS-DOS, but the programs' options and default behaviors do differ
+in some respects.
+
+Install the unzip package if you need to list, test or extract files from
+a zip archive.
+
+</description>
+  <url>http://www.info-zip.org/pub/infozip/UnZip.html</url>
+</package>
