@@ -2,7 +2,7 @@
 Summary: A utility for unpacking zip files
 Name: unzip
 Version: 6.0
-Release: 10
+Release: 11
 License: BSD
 Group: Applications/Archiving
 Source: ftp://ftp.info-zip.org/pub/infozip/src/unzip60.tar.gz
@@ -21,6 +21,7 @@ Patch5: unzip-6.0-nostrip.patch
 Patch6: CVE-2014-8139-crc-overflow.patch
 Patch7: CVE-2014-8140-test-compr-eb.patch
 Patch8: CVE-2014-8141-getzip64data.patch
+Patch9: CVE-2014-9636-test-compr-eb.patch
 URL: http://www.info-zip.org/pub/infozip/UnZip.html
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
@@ -45,6 +46,7 @@ a zip archive.
 %patch6 -p1 -b .CVE-2014-8139
 %patch7 -p1 -b .CVE-2014-8140
 %patch8 -p1 -b .CVE-2014-8141
+%patch9 -p1 -b .CVE-2014-9636
 ln -s unix/Makefile Makefile
 
 %build

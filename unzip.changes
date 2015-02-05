@@ -1,3 +1,7 @@
+* Mon Feb 05 2015 Pasi Sjöholm <pasi.sjoholm@jollamobile.com> - 6.0
+- Fix CVE-2014-9636  
+- Fix CVE-2014-8139 in right way
+
 * Mon Dec 29 2014 Pasi Sjöholm <pasi.sjoholm@jollamobile.com> - 6.0
 - Fix CVE-2014-8139, CVE-2014-8140 and CVE-2014-8141
 
