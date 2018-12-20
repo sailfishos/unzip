@@ -2,7 +2,7 @@
 Summary: A utility for unpacking zip files
 Name: unzip
 Version: 6.0
-Release: 12
+Release: 13
 License: BSD
 Group: Applications/Archiving
 Source: ftp://ftp.info-zip.org/pub/infozip/src/unzip60.tar.gz
@@ -39,6 +39,14 @@ in some respects.
 Install the unzip package if you need to list, test or extract files from
 a zip archive.
 
+%package doc
+Summary:  Documentation for %{name}
+Group:    Documentation
+Requires: %{name} = %{version}
+
+%description doc
+Man pages for %{name}.
+
 %prep
 %setup -q -n %{name}60
 %patch1 -p1 -b .bzip2-configure
@@ -61,14 +69,21 @@ make CFLAGS="-D_LARGEFILE64_SOURCE" linux_noasm LF2="" %{?_smp_mflags}
 %install
 rm -rf $RPM_BUILD_ROOT
 
-make prefix=$RPM_BUILD_ROOT%{_prefix} MANDIR=$RPM_BUILD_ROOT/%{_mandir}/man1 INSTALL="cp -p" install LF2="" 
+make prefix=$RPM_BUILD_ROOT%{_prefix} MANDIR=$RPM_BUILD_ROOT/%{_mandir}/man1 INSTALL="cp -p" install LF2=""
+
+# move doc files to their own directory
+mkdir -p %{buildroot}/%{_docdir}/%{name}-%{version}
+install -m0644 README %{buildroot}/%{_docdir}/%{name}-%{version}/
+install -m0644 BUGS   %{buildroot}/%{_docdir}/%{name}-%{version}/
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(-,root,root)
-%doc README BUGS LICENSE 
 %{_bindir}/*
-%doc %{_mandir}/*/*
+%license LICENSE
 
+%files doc
+%doc %{_docdir}/%{name}-%{version}/*
+%doc %{_mandir}/*/*
