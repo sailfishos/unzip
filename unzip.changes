@@ -1,3 +1,7 @@
+* Thu Dec 20 2018 Tomi Leppänen <tomi.leppanen@jolla.com> - 6.0-13
+- [packaging] Add subpackage doc for man pages. Contributes to JB#24119
+- [packaging] Fix invalid dates in changes.
+
 * Mon Nov 09 2015 Pasi Sjöholm <pasi.sjoholm@jollamobile.com> - 6.0-12
 - Fix CVE-2015-7696, CVE-2015-7697 & additional invalid input
   vulnerability. Fixes MER#1413

@@ -85,5 +85,5 @@ rm -rf $RPM_BUILD_ROOT
 %license LICENSE
 
 %files doc
-%doc %{_docdir}/%{name}-%{version}/*
+%doc %{_docdir}/%{name}-%{version}
 %doc %{_mandir}/*/*
